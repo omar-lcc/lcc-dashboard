@@ -93,7 +93,7 @@ text-align:center;font-size:12px;color:var(--mu);margin-top:32px}
 <p>&#1604;&#1608;&#1581;&#1577; &#1605;&#1578;&#1575;&#1576;&#1593;&#1577; &#1575;&#1604;&#1605;&#1576;&#1610;&#1593;&#1575;&#1578; - &#1602;&#1587;&#1605; &#1575;&#1604;&#1578;&#1602;&#1575;&#1585;&#1610;&#1585;</p>
 </div></div>
 <div class=hmeta>
-<div id=lupd>&#1570;&#1582;&#1585; &#1578;&#1581;&#1583;&#1610;&#1579;: 2026-06-29 13:18</div>
+<div id=lupd>&#1570;&#1582;&#1585; &#1578;&#1581;&#1583;&#1610;&#1579;: 2026-07-01 14:37</div>
 <button class=bprint onclick=window.print()>&#1591;&#1576;&#1575;&#1593;&#1577; / PDF</button>
 <button class=bprint id=bsnap style=background:var(--bl);color:#fff;margin-right:8px onclick=snapDash()>&#1581;&#1601;&#1592; &#1603;&#1589;&#1608;&#1585;&#1577;</button>
 </div></header>
@@ -135,6 +135,9 @@ text-align:center;font-size:12px;color:var(--mu);margin-top:32px}
 <div class=klbl>&#1606;&#1587;&#1576;&#1577; &#1575;&#1604;&#1573;&#1606;&#1580;&#1575;&#1586; &#1575;&#1604;&#1587;&#1606;&#1608;&#1610;</div>
 <div class=kval id=k4></div>
 <div class=kunit>% &#1605;&#1606; &#1575;&#1604;&#1605;&#1587;&#1578;&#1607;&#1583;&#1601; &#1575;&#1604;&#1587;&#1606;&#1608;&#1610;</div>
+<div class=pw><div class=pl>
+<span>&#1605;&#1606; &#1575;&#1604;&#1605;&#1587;&#1578;&#1607;&#1583;&#1601;</span><span id=p4></span></div>
+<div class=pb><div class='pf' id=b4 style='width:0%;background:linear-gradient(90deg,#6e40c9,var(--pu))'></div></div></div>
 <div class=ksub id=k4s></div>
 </div>
 </div>
@@ -179,7 +182,7 @@ text-align:center;font-size:12px;color:var(--mu);margin-top:32px}
 <footer>
 &#1588;&#1585;&#1603;&#1577; &#1575;&#1604;&#1571;&#1587;&#1605;&#1606;&#1578; &#1575;&#1604;&#1604;&#1610;&#1576;&#1610;&#1577; (LCC)
 &nbsp;|&nbsp; &#1602;&#1587;&#1605; &#1575;&#1604;&#1578;&#1602;&#1575;&#1585;&#1610;&#1585;
-&nbsp;|&nbsp; 2026-06-29 13:18
+&nbsp;|&nbsp; 2026-07-01 14:37
 </footer>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js></script>
@@ -224,7 +227,10 @@ var diff=D.landing_kt-D.target_kt;
 var ls=document.getElementById('k3s');
 ls.innerHTML=(diff>=0?'Above target by ':'Below target by ')+fmt(Math.abs(diff))+' KT';
 ls.style.color=diff>=0?'var(--gr)':'var(--rd)';
-document.getElementById('k4').innerHTML=Math.round(D.annual_pct*100)+'%';
+var p4=Math.round(D.annual_pct*100);
+document.getElementById('k4').innerHTML=p4+'%';
+document.getElementById('p4').innerHTML=p4+'%';
+document.getElementById('b4').style.width=clamp(p4,0,100)+'%';
 document.getElementById('k4s').innerHTML='YTD: '+fmt(D.annual_total_kt)+' KT / Target: '+fmt(D.annual_target_kt)+' KT';
 document.getElementById('bq').innerHTML=fmt(D.ben_total_t);
 document.getElementById('aq').innerHTML=fmt(D.alf_total_t);
