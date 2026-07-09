@@ -102,7 +102,7 @@ margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--bd)}
 <p>&#1604;&#1608;&#1581;&#1577; &#1605;&#1578;&#1575;&#1576;&#1593;&#1577; &#1575;&#1604;&#1605;&#1576;&#1610;&#1593;&#1575;&#1578; - &#1602;&#1587;&#1605; &#1575;&#1604;&#1578;&#1602;&#1575;&#1585;&#1610;&#1585;</p>
 </div></div>
 <div class=hmeta>
-<div id=lupd>&#1570;&#1582;&#1585; &#1578;&#1581;&#1583;&#1610;&#1579;: 2026-07-09 14:06</div>
+<div id=lupd>&#1570;&#1582;&#1585; &#1578;&#1581;&#1583;&#1610;&#1579;: 2026-07-09 14:20</div>
 <button class=bprint onclick=window.print()>&#1591;&#1576;&#1575;&#1593;&#1577; / PDF</button>
 <button class=bprint id=bsnap style=background:var(--bl);color:#fff;margin-right:8px onclick=snapDash()>&#1581;&#1601;&#1592; &#1603;&#1589;&#1608;&#1585;&#1577;</button>
 </div></header>
@@ -192,7 +192,7 @@ margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--bd)}
 <footer>
 &#1588;&#1585;&#1603;&#1577; &#1575;&#1604;&#1571;&#1587;&#1605;&#1606;&#1578; &#1575;&#1604;&#1604;&#1610;&#1576;&#1610;&#1577; (LCC)
 &nbsp;|&nbsp; &#1602;&#1587;&#1605; &#1575;&#1604;&#1578;&#1602;&#1575;&#1585;&#1610;&#1585;
-&nbsp;|&nbsp; 2026-07-09 14:06
+&nbsp;|&nbsp; 2026-07-09 14:20
 </footer>
 <div class=modal-ov id=pmOv onclick='if(event.target===this)closeProductModal()'>
 <div class=modal-bx>
@@ -202,10 +202,8 @@ margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--bd)}
 <th>&#1575;&#1604;&#1605;&#1606;&#1578;&#1580;</th>
 <th>&#1606;&#1608;&#1593; &#1575;&#1604;&#1578;&#1593;&#1576;&#1574;&#1577;</th>
 <th id=pmYearCol></th>
-<th>2025 (&#1591;&#1606;)</th>
 <th>&#1575;&#1604;&#1605;&#1587;&#1578;&#1607;&#1583;&#1601;</th>
 <th>% &#1578;&#1581;&#1602;&#1610;&#1602;</th>
-<th>&#1575;&#1604;&#1578;&#1594;&#1610;&#1585;</th>
 </tr></thead><tbody id=pmBody></tbody></table></div>
 </div></div>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js></script>
@@ -338,10 +336,8 @@ var tgTxt=typeof r.target==='number'?fmt(r.target):decodeAr(r.target);
 return '<tr><td style=font-weight:700>'+nm+'</td>'
 +'<td style=color:var(--mu)>'+pk+'</td>'
 +'<td>'+fmt(r.qty)+'</td>'
-+'<td>'+lyTxt+'</td>'
 +'<td>'+tgTxt+'</td>'
-+'<td style=color:'+pctClr+';font-weight:700>'+pctTxt+'</td>'
-+'<td>'+varTxt+'</td></tr>';
++'<td style=color:'+pctClr+';font-weight:700>'+pctTxt+'</td></tr>';
 }).join('');}
 function snapDash(){
 var btn=document.getElementById('bsnap');
