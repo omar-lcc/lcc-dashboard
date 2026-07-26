@@ -60,6 +60,7 @@ border-radius:14px;padding:20px;position:relative;overflow:hidden}
 .pf{height:100%;border-radius:3px}
 .fg{background:linear-gradient(90deg,var(--ac),var(--ac2))}
 .fb{background:linear-gradient(90deg,#1f6feb,var(--bl))}
+.fgr{background:linear-gradient(90deg,#238636,var(--gr))}
 .g2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
 .g3{display:grid;grid-template-columns:2fr 1fr 1fr;gap:16px;margin-bottom:24px}
 .panel{background:var(--sf);border:1px solid var(--bd);border-radius:14px;padding:20px}
@@ -102,7 +103,7 @@ margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--bd)}
 <p>&#1604;&#1608;&#1581;&#1577; &#1605;&#1578;&#1575;&#1576;&#1593;&#1577; &#1575;&#1604;&#1605;&#1576;&#1610;&#1593;&#1575;&#1578; - &#1602;&#1587;&#1605; &#1575;&#1604;&#1578;&#1602;&#1575;&#1585;&#1610;&#1585;</p>
 </div></div>
 <div class=hmeta>
-<div id=lupd>&#1570;&#1582;&#1585; &#1578;&#1581;&#1583;&#1610;&#1579;: 2026-07-26 13:35</div>
+<div id=lupd>&#1570;&#1582;&#1585; &#1578;&#1581;&#1583;&#1610;&#1579;: 2026-07-26 13:46</div>
 <button class=bprint onclick=window.print()>&#1591;&#1576;&#1575;&#1593;&#1577; / PDF</button>
 <button class=bprint id=bsnap style=background:var(--bl);color:#fff;margin-right:8px onclick=snapDash()>&#1581;&#1601;&#1592; &#1603;&#1589;&#1608;&#1585;&#1577;</button>
 </div></header>
@@ -142,6 +143,10 @@ margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--bd)}
 <div class=klbl>&#1575;&#1604;&#1605;&#1578;&#1608;&#1602;&#1593; &#1578;&#1581;&#1602;&#1610;&#1602;&#1607; (Landing)</div>
 <div class=kval id=k3></div>
 <div class=kunit>&#1603;&#1610;&#1604;&#1608; &#1591;&#1606;</div>
+<div class=pw><div class=pl>
+<span>&#1605;&#1606; &#1575;&#1604;&#1605;&#1587;&#1578;&#1607;&#1583;&#1601;</span><span id=p3></span></div>
+<div class=pb><div class='pf fgr' id=b3 style=width:0%></div></div></div>
+<div class=ksub>&#1575;&#1604;&#1605;&#1587;&#1578;&#1607;&#1583;&#1601;: <span id=t3></span> KT</div>
 <div class=ksub id=k3s></div>
 </div>
 <div class='kcard p'>
@@ -201,7 +206,7 @@ margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--bd)}
 <footer>
 &#1588;&#1585;&#1603;&#1577; &#1575;&#1604;&#1571;&#1587;&#1605;&#1606;&#1578; &#1575;&#1604;&#1604;&#1610;&#1576;&#1610;&#1577; (LCC)
 &nbsp;|&nbsp; &#1602;&#1587;&#1605; &#1575;&#1604;&#1578;&#1602;&#1575;&#1585;&#1610;&#1585;
-&nbsp;|&nbsp; 2026-07-26 13:35
+&nbsp;|&nbsp; 2026-07-26 13:46
 </footer>
 <div class=modal-ov id=pmOv onclick='if(event.target===this)closeProductModal()'>
 <div class=modal-bx>
@@ -276,6 +281,10 @@ document.getElementById('p2').innerHTML=p2+'%';
 document.getElementById('b2').style.width=clamp(p2,0,100)+'%';
 document.getElementById('k2yoy').innerHTML=yoyBadge(D.payment_mtd_m,D.ly_payment_mtd_m);
 document.getElementById('k3').innerHTML=fmt(D.landing_kt);
+var p3=pct(D.landing_kt,D.target_kt);
+document.getElementById('t3').innerHTML=fmt(D.target_kt);
+document.getElementById('p3').innerHTML=p3+'%';
+document.getElementById('b3').style.width=clamp(p3,0,100)+'%';
 var diff=D.landing_kt-D.target_kt;
 var ls=document.getElementById('k3s');
 ls.innerHTML=(diff>=0?'Above target by ':'Below target by ')+fmt(Math.abs(diff))+' KT';
